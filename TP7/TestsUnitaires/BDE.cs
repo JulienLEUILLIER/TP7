@@ -3,10 +3,10 @@ using Xunit;
 
 namespace TestsUnitaires
 {
-    public class UnitTest1
+    public class BDE
     {
         [Fact]
-        public void Test1()
+        public void AddingProductsTest()
         {
 
         }

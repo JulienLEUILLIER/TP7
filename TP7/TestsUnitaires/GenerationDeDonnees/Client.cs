@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TP7
+namespace TestsUnitaires.GenerationDeDonnees
 {
-    public class Produit
+    internal class Client
     {
-
     }
 }
