@@ -8,9 +8,9 @@ namespace TP7
     {
         public readonly float _alcoholDegree;
 
-        public AlcoholicBeverage(string productName, decimal buyPrice, decimal memberPrice, decimal notMemberPrice, float alcohoholDegree) : base(productName, buyPrice, memberPrice, notMemberPrice)
+        public AlcoholicBeverage(string productName, PriceInformation priceInformation, float alcoholDegree) : base(productName, priceInformation)
         {
-            _alcoholDegree = alcohoholDegree;
+            _alcoholDegree = alcoholDegree;
         }
     }
 }

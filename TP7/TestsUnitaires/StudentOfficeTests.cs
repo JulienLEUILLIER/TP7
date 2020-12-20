@@ -7,7 +7,7 @@ namespace TestsUnitaires
 {
     public class StudentOfficeTests
     {
-        private StudentOffice sut;
+        private readonly StudentOffice sut;
         private readonly Client john = Clients.John();
         private readonly Client jane = Clients.Jane();
 

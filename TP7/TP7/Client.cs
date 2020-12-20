@@ -38,9 +38,17 @@ namespace TP7
         public decimal GetAppropriatePrice(Product product)
         {
             decimal appropriatePrice;
+            PriceInformation priceInformation = product._priceInformation;
             appropriatePrice = this is Student ?
-                product._memberPrice : product._notMemberPrice;
+                priceInformation._memberPrice : priceInformation._notMemberPrice;
             return appropriatePrice;
+        }
+
+        public bool CanBuy(Product product)
+        {
+            if (this._age <= 18 && product is AlcoholicBeverage)
+                return false;
+            return true;
         }
 
         public static bool operator ==(Client client1, Client client2)

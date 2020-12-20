@@ -7,16 +7,12 @@ namespace TP7
     public abstract class Product
     {
         public readonly string _productName;
-        public readonly decimal _buyPrice;
-        public readonly decimal _memberPrice;
-        public readonly decimal _notMemberPrice;
+        public readonly PriceInformation _priceInformation;
 
-        protected Product(string productName, decimal buyPrice, decimal memberPrice, decimal notMemberPrice)
+        protected Product(string productName, PriceInformation priceInformation)
         {
             _productName = productName;
-            _buyPrice = buyPrice;
-            _memberPrice = memberPrice;
-            _notMemberPrice = notMemberPrice;
+            _priceInformation = priceInformation;
         }
     }
 }

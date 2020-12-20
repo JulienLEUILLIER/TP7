@@ -6,7 +6,7 @@ namespace TP7
 {
     public class Food : Product
     {
-        public Food(string productName, decimal buyPrice, decimal memberPrice, decimal notMemberPrice) : base(productName, buyPrice, memberPrice, notMemberPrice)
+        public Food(string productName, PriceInformation priceInformation) : base(productName, priceInformation)
         {
         }
     }
