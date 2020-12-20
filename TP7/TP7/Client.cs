@@ -35,6 +35,14 @@ namespace TP7
             return _lastname + " " + _firstname;
         }
 
+        public decimal GetAppropriatePrice(Product product)
+        {
+            decimal appropriatePrice;
+            appropriatePrice = this is Student ?
+                appropriatePrice = product._memberPrice : appropriatePrice = product._notMemberPrice;
+            return appropriatePrice;
+        }
+
         public static bool operator ==(Client client1, Client client2)
         {
             return client1._lastname == client2._lastname && client1._firstname == client2._firstname;

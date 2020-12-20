@@ -5,7 +5,7 @@ using TP7;
 
 namespace TestsUnitaires.GenerationDeDonnees
 {
-    internal class Produits
+    internal static class Products
     {
         internal static Product Water()
         {
