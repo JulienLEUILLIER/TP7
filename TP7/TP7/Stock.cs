@@ -18,9 +18,9 @@ namespace TP7
             return _StockProduct.FirstOrDefault(KeyValuePair => KeyValuePair.Key._productName.Equals(name)).Key;
         }
 
-        public Stock(decimal balance)
+        public Stock()
         {
-            _currentBalance = balance;
+            _currentBalance = 0;
         }
 
         public void AddProduct(Product product, int quantity)
