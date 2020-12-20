@@ -6,7 +6,7 @@ namespace TP7
     {
         static void Main(string[] args)
         {
-            
+
         }
     }
 }

@@ -9,13 +9,13 @@ namespace TestsUnitaires
 {
     public class StockTests
     {
-        private Stock sut;
-        private Product chips = Products.Chips();
-        private Client john = Clients.John();
+        private readonly Stock sut;
+        private readonly Product chips = Products.Chips();
+        private readonly Client john = Clients.John();
 
         public StockTests()
         {
-            sut = new Stock(100m);
+            sut = new Stock();
             sut.AddProduct(chips, 10);
         }
         [Fact]

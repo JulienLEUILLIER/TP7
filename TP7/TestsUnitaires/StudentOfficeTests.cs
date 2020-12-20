@@ -8,31 +8,37 @@ namespace TestsUnitaires
     public class StudentOfficeTests
     {
         private StudentOffice sut;
-        private Client john = Clients.John();
-        private Client jane = Clients.Jane();
+        private readonly Client john = Clients.John();
+        private readonly Client jane = Clients.Jane();
 
         public StudentOfficeTests()
         {
-            
+            sut = new StudentOffice();
         }
         [Fact]
         public void TestFormatName()
         {
-            Assert.Equal("DOE John", Clients.John().GetName());
+            Assert.Equal("DOE John", john.GetName());
+        }
+
+        [Fact]
+        public void GetRightClient()
+        {
+            sut._ClientList.Add(john, 5);
+
+            Assert.True(sut.GetClientByName(john.GetName()));
         }
         [Fact]
         public void AddingSingleStudentTest()
         {
-            StudentOffice.DestructStudentOffice();
-
+            sut = new StudentOffice();
             sut.AddClient(john, 5m);
 
             Assert.Single(sut._ClientList);
         }
+        [Fact]
         public void AddingOtherClientTest()
         {
-            StudentOffice.DestructStudentOffice();
-
             sut.AddClient(jane, 5m);
 
             Assert.Single(sut._ClientList);

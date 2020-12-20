@@ -20,7 +20,7 @@ namespace TP7
 
         public Stock()
         {
-            _currentBalance = 0;
+            _currentBalance = 100m;
         }
 
         public void AddProduct(Product product, int quantity)

@@ -39,13 +39,13 @@ namespace TP7
         {
             decimal appropriatePrice;
             appropriatePrice = this is Student ?
-                appropriatePrice = product._memberPrice : appropriatePrice = product._notMemberPrice;
+                product._memberPrice : product._notMemberPrice;
             return appropriatePrice;
         }
 
         public static bool operator ==(Client client1, Client client2)
         {
-            return client1._lastname == client2._lastname && client1._firstname == client2._firstname;
+            return client1.GetName() == client2.GetName();
         }
 
         public static bool operator !=(Client client1, Client client2)
