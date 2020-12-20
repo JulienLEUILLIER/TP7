@@ -1,5 +1,4 @@
-using System;
-using TestsUnitaires.GenerationDeDonnees;
+using TestsUnitaires.DataGenerator;
 using TP7;
 using Xunit;
 

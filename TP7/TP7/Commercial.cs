@@ -27,5 +27,12 @@ namespace TP7
             ProductInformation productInformation = new ProductInformation(productName, typeProduct, priceInformation, alcoholdegree);
             Brochure.Add(productInformation);
         }
+
+        public void AddToStock(StudentOffice office, string productName, int quantity)
+        {
+            Stock stock = office._currentStock;
+            Product orderedProduct = Order(productName);
+            stock.AddProduct(orderedProduct, quantity);
+        }
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TestsUnitaires.GenerationDeDonnees;
+﻿using TestsUnitaires.DataGenerator;
 using TP7;
 using Xunit;
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using TP7;
 
-namespace TestsUnitaires.GenerationDeDonnees
+namespace TestsUnitaires.DataGenerator
 {
     internal static class Clients
     {
