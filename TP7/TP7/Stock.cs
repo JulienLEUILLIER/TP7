@@ -34,10 +34,10 @@ namespace TP7
             {
                 CheckStockChange(currentProduct, quantity);
             }
-            SetBalance(quantity * product._buyPrice);
+            SetBalance(-quantity * product._buyPrice);
         }
 
-        private void CheckStockChange(Product product, int quantity)
+        public void CheckStockChange(Product product, int quantity)
         {
             product = GetProductByName(product._productName);
             if (product != default && _StockProduct[product] + quantity >= 0)
@@ -51,7 +51,7 @@ namespace TP7
             SetBalance(client.GetAppropriatePrice(product) * quantity);
         }
 
-        private void SetBalance(decimal amount)
+        public void SetBalance(decimal amount)
         {
             _currentBalance += amount;
         }

@@ -21,5 +21,19 @@ namespace TestsUnitaires.GenerationDeDonnees
         {
             return new OtherClient("Thomson", "Timmy", 15);
         }
+
+        public static Client CreateClient(string lastname, string firstname, short age, short year = 0)
+        {
+            Client newClient;
+            if (year == 0)
+            {
+                newClient = new OtherClient(lastname, firstname, age);
+            }
+            else
+            {
+                newClient = new Student(lastname, firstname, age, year);
+            }
+            return newClient;
+        }
     }
 }

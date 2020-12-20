@@ -31,7 +31,6 @@ namespace TestsUnitaires
         [Fact]
         public void AddingSingleStudentTest()
         {
-            sut = new StudentOffice();
             sut.AddClient(john, 5m);
 
             Assert.Single(sut._ClientList);
@@ -42,6 +41,20 @@ namespace TestsUnitaires
             sut.AddClient(jane, 5m);
 
             Assert.Single(sut._ClientList);
+        }
+        [Fact]
+        public void ClientTypeTest()
+        {
+            Client pierre = Clients.CreateClient("dupont", "pierre", 25, 2006);
+            Client jean = Clients.CreateClient("moulin", "jean", 42);
+
+            sut.AddClient(pierre, 5m);
+            sut.AddClient(jean, 7m);
+
+            Assert.True(sut.GetClientByName(pierre.GetName()));
+            Assert.True(sut.GetClientByName(jean.GetName()));
+            Assert.IsType<Student>(pierre);
+            Assert.IsType<OtherClient>(jean);
         }
     }
 }

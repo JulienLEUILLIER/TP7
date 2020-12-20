@@ -35,6 +35,11 @@ namespace TP7
 
         public readonly Stock _currentStock;
 
+        public StudentOffice()
+        {
+            _currentStock = new Stock();
+        }
+
         public bool GetClientByName(string name)
         {
             return _ClientList.Any(KeyValuePair => KeyValuePair.Key.GetName().ToUpper().Equals(name.ToUpper()));
@@ -46,6 +51,49 @@ namespace TP7
             {
                 _ClientList.Add(client, balance);
             }
+        }
+
+        public void SellProduct(Client client, Product product, int number)
+        {
+            if (number > 0)
+            {
+                decimal appropriatePrice = client.GetAppropriatePrice(product) * number;
+                _currentStock.CheckStockChange(product, -number);
+                _ClientList[client] -= appropriatePrice;
+                _currentStock.SetBalance(appropriatePrice);
+            }
+        }
+
+        public List<Client> WrongBalance(decimal minimalBalance)
+        {
+            return _ClientList.Keys.Where(kvp => _ClientList[kvp] < minimalBalance).ToList();
+        }
+
+        public List<Client> WrongBalance()
+        {
+            return WrongBalance(0m);
+        }
+
+        public void DisplayUsersConsole(Dictionary<Client, decimal> list)
+        {
+            Console.WriteLine("Liste des étudiants de la BDE ayant accès au prix préférentiel :\n");
+
+            foreach (KeyValuePair<Client, decimal> pair in list)
+            {
+                Console.WriteLine("\t{0} : {1}", pair.Key.GetName(), pair.Value);
+            }
+            Console.ReadLine();
+        }
+
+        public void DisplayWrongBalanceClients(decimal number)
+        {
+            Console.WriteLine("Liste des mauvais payeurs :\n");
+
+            foreach (Client client in WrongBalance(number))
+            {
+                Console.WriteLine(client.GetName());
+            }
+            Console.WriteLine();
         }
     }
 }

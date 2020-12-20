@@ -14,7 +14,7 @@ namespace TestsUnitaires.GenerationDeDonnees
 
         internal static Product Chips()
         {
-            return new Food("Chips", 0.75m, 1.0m, 1.25m);
+            return new Food("Chips", 0.5m, 1.0m, 1.25m);
         }
 
         internal static Product Beer()
